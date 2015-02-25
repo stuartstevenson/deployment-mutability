@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Deployment-mutability : Thoughts on the mutability of configuration and how it is managed">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Deployment-mutability</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/stuartstevenson/deployment-mutability">View on GitHub</a>
+
+          <h1 id="project_title">Deployment-mutability</h1>
+          <h2 id="project_tagline">Thoughts on the mutability of configuration and how it is managed</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/stuartstevenson/deployment-mutability/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/stuartstevenson/deployment-mutability/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="deployment-mutability" class="anchor" href="#deployment-mutability" aria-hidden="true"><span class="octicon octicon-link"></span></a>deployment-mutability</h1>
+
+<p>Config management has raised a very cool area of thought. Is the application just another part of the systems configuration? Why is the app special and should it be treated differently? I think of the two schools of thought as mutable vs immutable state. Puppet and chef representing the idea that state is mutable and so countermeasures are needed. Docker and containers representing the idea that immutability will remove the need to worry about these problems.</p>
+
+<p>So let's discuss. On a trivial level change and mutability are something that you have to worry about if you expect things to be unmanaged for periods of time. Entropy is the enemy you are fighting, not nefarious agents as we so often use as exemplars.</p>
+
+<p>Immutability shuts down vectors by which entropy shows itself. It also assumes that it is a fight not worth wasting energy on. As you may be gathering I have a preference. Sun Tzu, only fight battles you can win, and all that.</p>
+
+<p>The opposing view is that tools that make you the master of mutability are your friends. You feel more in control as surely you can fight off entropy from your fortress of configuratude. If all config is state, can't functional thinking teach us a thing or two about working with state and sources of truth. </p>
+
+<p>The Netflix approach of packaging up AMIs with everything they need at build time makes for very reproducible behaviour across environments. Only very external services such as service discovery need to be managed outside of the package. The cons are of course a lack of flexibility.</p>
+
+<p>I feel the trade off is down to the cycle time of your organisation. If you can release changes in hours then rebuilding an immutable package should be a low cost activity. However if releases from commit to production take days then you need to be prepared for other environmental configuration to have changed in that time. And if rebuilding the package isn't feasible due to the length of your delivery pipeline then immutability will be a curse not a boon.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Deployment-mutability maintained by <a href="https://github.com/stuartstevenson">stuartstevenson</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
